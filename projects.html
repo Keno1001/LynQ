@@ -1,151 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>LDS LynQ — Discover Projects</title>
-  <link rel="stylesheet" href="css/style.css"/>
-  <style>
-    /* --- Page-specific styles (keeps your main style.css clean) --- */
-    .page-hero{padding:2.2rem 0 1.2rem;border-bottom:1px solid rgba(255,255,255,.08)}
-    .page-hero .wrap{display:flex;align-items:end;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-    .page-hero h1{margin:0;font-size:clamp(1.6rem,3.5vw,2.2rem)}
-    .muted{color:var(--muted)}
-    .filters{padding:1rem 0}
-    .filters .row{display:flex;gap:.8rem;flex-wrap:wrap;align-items:center}
-    .search{
-      flex:1 1 280px; display:flex; align-items:center; gap:.6rem;
-      background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:.65rem .8rem;
-    }
-    .search input{
-      flex:1; background:transparent; border:0; outline:0; color:var(--text); font-size:1rem;
-    }
-    .chip{
-      display:inline-flex; align-items:center; gap:.45rem; padding:.45rem .7rem; border-radius:999px;
-      background:rgba(212,175,55,.10); border:1px solid rgba(212,175,55,.35); color:var(--gold); cursor:pointer;
-      transition:filter .2s ease;
-    }
-    .chip[data-active="true"]{background:rgba(212,175,55,.20)}
-    .chip:hover{filter:brightness(1.1)}
-    .select{
-      background:var(--card); color:var(--text); border:1px solid rgba(255,255,255,.12); border-radius:10px; padding:.55rem .7rem;
-    }
-
-    .grid{display:grid; gap:1rem; grid-template-columns:repeat(3, 1fr)}
-    @media (max-width:1024px){ .grid{grid-template-columns:repeat(2, 1fr)} }
-    @media (max-width:640px){ .grid{grid-template-columns:1fr} }
-    .tile{
-      background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; overflow:hidden; display:flex; flex-direction:column;
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .tile:hover{transform:translateY(-4px); box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .thumb{aspect-ratio: 16/10; background:#0a0f1f center/cover no-repeat}
-    .tile .body{padding:1rem}
-    .tile h3{margin:.1rem 0 .35rem; font-size:1.02rem}
-    .tile p{color:var(--muted); margin:0 0 .6rem}
-    .tags{display:flex; gap:.4rem; flex-wrap:wrap}
-    .tag{font-size:.78rem; color:var(--gold); border:1px solid rgba(212,175,55,.35); padding:.15rem .45rem; border-radius:999px; background:rgba(212,175,55,.08)}
-    .meta{display:flex; justify-content:space-between; align-items:center; margin-top:.7rem; color:var(--muted); font-size:.9rem}
-    .btn.small{padding:.45rem .7rem; border-radius:10px; border:1px solid rgba(255,255,255,.12); background:var(--card); color:var(--text)}
-    .btn.small.gold{border-color:var(--gold); color:#14181f; background:linear-gradient(180deg, #FFD873, var(--gold))}
-    .empty{padding:2rem; text-align:center; color:var(--muted); border:1px dashed rgba(255,255,255,.2); border-radius:14px}
-
-    /* Modal */
-    .modal-backdrop{
-      position:fixed; inset:0; display:none; place-items:center; background:rgba(4,6,12,.6); backdrop-filter: blur(6px); z-index:50;
-    }
-    .modal{width:min(960px, 94%); max-height:88vh; overflow:auto; background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.12); border-radius:16px;
-    }
-    .modal header{display:flex; justify-content:space-between; align-items:center; padding:1rem 1rem .5rem; border-bottom:1px solid rgba(255,255,255,.08)}
-    .modal .content{padding:1rem; display:grid; grid-template-columns:1.1fr .9fr; gap:1rem}
-    @media (max-width:900px){ .modal .content{grid-template-columns:1fr} }
-    .modal .cover{aspect-ratio:16/10; background:#0a0f1f center/cover no-repeat; border-radius:12px; border:1px solid rgba(255,255,255,.1)}
-    .modal h3{margin:.2rem 0 .4rem}
-    .modal .links{display:flex; gap:.5rem; flex-wrap:wrap; margin-top:.7rem}
-    .modal .links a{border:1px solid rgba(255,255,255,.12); padding:.45rem .6rem; border-radius:10px}
-    .close{cursor:pointer; border:1px solid rgba(255,255,255,.15); padding:.35rem .6rem; border-radius:10px}
-    .backdrop-show{display:grid}
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - LynQ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="gridbg" aria-hidden="true"></div>
-
   <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <span class="dot" aria-hidden="true"></span>
-        <span>LDS <strong>LynQ</strong></span>
-      </div>
-      <nav>
-        <a class="cta" href="index.html">Home</a>
-        <a class="cta" href="projects.html">Discover</a>
-        <a class="cta" href="#">About</a>
-        <a class="cta" href="#">Community</a>
-      </nav>
-    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html" class="active">Discover</a>
+      <a href="community.html">Community</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <section class="page-hero">
-    <div class="wrap">
-      <div>
-        <h1>Discover Projects</h1>
-        <div class="muted">Explore software, electronics, AI, 3D & more — all in one place.</div>
-      </div>
-      <a class="btn gold" id="addProjectBtn" href="#">+ Add Project (demo)</a>
-    </div>
-  </section>
+  <main>
+    <section class="intro">
+      <h1>Discover Projects</h1>
+      <p>Explore open-source projects from across technology, programming, and electronics.</p>
+      <button id="addProjectBtn">+ Add Project</button>
+    </section>
 
-  <section class="wrap">
-    <div class="filters">
-      <div class="row" style="margin-bottom:.7rem">
-        <div class="search">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3m1.3-5.2a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-          <input id="q" type="search" placeholder="Search projects, tags, creators…">
-        </div>
-        <select id="sort" class="select" aria-label="Sort">
-          <option value="new">Newest</option>
-          <option value="popular">Popular</option>
-          <option value="az">A–Z</option>
-        </select>
-      </div>
-      <div class="row" id="tagBar">
-        <!-- tag chips injected by JS -->
-      </div>
-    </div>
-
-    <div id="grid" class="grid" aria-live="polite">
-      <!-- project tiles injected by JS -->
-    </div>
-
-    <div id="empty" class="empty" style="display:none">No projects match your filters.</div>
-  </section>
-
-  <!-- Modal -->
-  <div id="modalBack" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal">
-      <header>
-        <strong id="mTitle">Project</strong>
-        <button class="close" id="mClose">Close</button>
-      </header>
-      <div class="content">
-        <div id="mCover" class="cover"></div>
-        <div>
-          <h3 id="mHeadline"></h3>
-          <div id="mTags" class="tags" style="margin-bottom:.6rem"></div>
-          <p id="mDesc" class="muted"></p>
-          <div class="links" id="mLinks"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="wrap" style="display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap">
-      <div>© <span id="y"></span> LDS LynQ · Powered by LunarDrift Studios</div>
-      <div class="muted">Open · Connected · Evolving</div>
-    </div>
-  </footer>
+    <!-- Hier werden Projekte dynamisch geladen -->
+    <section id="project-list" class="projects-grid"></section>
+  </main>
 
   <script src="js/discover.js"></script>
 </body>

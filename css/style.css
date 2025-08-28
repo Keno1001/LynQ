@@ -1,5 +1,3 @@
-/* === LDS LynQ Global Styles === */
-/* (Removed invalid HTML <head> section) */
 
 /* Base */
 :root {
@@ -165,4 +163,100 @@ footer {
 }
 footer .muted {
   color: var(--muted);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.project-card {
+  background: #0d1b2a;
+  color: #fff;
+  border: 1px solid #1b263b;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.tags {
+  font-size: 0.9em;
+  color: #ffb703;
+}
+
+/* --- Discover / Projects Page --- */
+
+.intro {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+#addProjectBtn {
+  background: #ffcc00;
+  border: none;
+  color: #111;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#addProjectBtn:hover {
+  background: #ffaa00;
+}
+
+/* Grid Layout für die Projektkarten */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Einzelne Projektkarten */
+.project-card {
+  background: #0d1b2a;         /* dunkles Blau für Cyberpunk Feeling */
+  color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 1rem;
+}
+
+.project-content h3 {
+  margin: 0.3rem 0;
+  color: #ffcc00;
+}
+
+.tags {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 0.5rem;
 }

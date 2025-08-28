@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Smart LED Lamp",
+    "author": "LDS Team",
+    "description": "A lamp you can control with your phone via Bluetooth.",
+    "image": "images/project1.jpg",
+    "tags": ["electronics", "IoT"]
+  },
+  {
+    "title": "3D Printed Phone Stand",
+    "author": "Community Member",
+    "description": "Minimalistic phone stand for your desk.",
+    "image": "images/project2.jpg",
+    "tags": ["3D printing", "design"]
+  },
+  {
+    "title": "LynQ Minecraft Client",
+    "author": "LDS Studios",
+    "description": "Custom client with unique mods and features.",
+    "image": "images/project3.jpg",
+    "tags": ["gaming", "software"]
+  }
+]
